@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="TestSuite" verbose="1">
+	<test name="Test App">
+		<classes>
+			<class name="com.appium.GridUFramework.AppTest" />
+		</classes>
+	</test>
+</suite>
