@@ -1,27 +1,27 @@
 package com.appium.GridUFramework;
 
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
-public class AppTest extends Base
+public class AppTest extends AbstractAppTest
 {
 
 	@Test(groups={"regression"})
-	public void actionSheets() {
-		
-		driver.findElementByAccessibilityId("Action Sheets").click();
-
-		driver.findElementByXPath("//XCUIElementTypeStaticText[@name='Okay / Cancel']").click();
-		driver.findElementByXPath("//XCUIElementTypeButton[@name='OK']").click();
-
-		driver.findElementByAccessibilityId("Other").click();
-		driver.findElementByAccessibilityId("Safe Choice").click();
-
-		//Navigate back to homepage after performing all the actions under Action Sheets
-		driver.navigate().back();
-		
+	public void testActionSheets() {
+		actionSheets();
+		navigateBack();
 	}
 	
+	@Test(groups={"regression"})
+	public void testactivityIndicators() {
+		activityIndicators();
+		navigateBack();
+	}
 	
+	@AfterTest 
+	public void closeDriver() {
+		tearDown();
+	}
 
 
 }
