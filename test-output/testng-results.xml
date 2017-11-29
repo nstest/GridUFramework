@@ -2,27 +2,27 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="109680" started-at="2017-11-27T23:45:14Z" finished-at="2017-11-27T23:47:04Z">
+  <suite name="Default suite" duration-ms="62236" started-at="2017-11-29T01:36:57Z" finished-at="2017-11-29T01:38:00Z">
     <groups>
       <group name="regression">
-        <method signature="AppTest.actionSheets()[pri:0, instance:com.appium.GridUFramework.AppTest@6ffa56fa]" name="actionSheets" class="com.appium.GridUFramework.AppTest"/>
+        <method signature="AppTest.actionSheets()[pri:0, instance:com.appium.GridUFramework.AppTest@19650aa6]" name="actionSheets" class="com.appium.GridUFramework.AppTest"/>
       </group> <!-- regression -->
     </groups>
-    <test name="Default test" duration-ms="109680" started-at="2017-11-27T23:45:14Z" finished-at="2017-11-27T23:47:04Z">
+    <test name="Default test" duration-ms="62236" started-at="2017-11-29T01:36:57Z" finished-at="2017-11-29T01:38:00Z">
       <class name="com.appium.GridUFramework.AppTest">
-        <test-method status="PASS" signature="startServer()[pri:0, instance:com.appium.GridUFramework.AppTest@6ffa56fa]" name="startServer" is-config="true" duration-ms="5095" started-at="2017-11-27T15:45:09Z" finished-at="2017-11-27T15:45:14Z">
+        <test-method status="PASS" signature="startServer()[pri:0, instance:com.appium.GridUFramework.AppTest@19650aa6]" name="startServer" is-config="true" duration-ms="5084" started-at="2017-11-28T17:36:52Z" finished-at="2017-11-28T17:36:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startServer -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.appium.GridUFramework.AppTest@6ffa56fa]" name="setup" is-config="true" duration-ms="93284" started-at="2017-11-27T15:45:14Z" finished-at="2017-11-27T15:46:47Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.appium.GridUFramework.AppTest@19650aa6]" name="setup" is-config="true" duration-ms="47532" started-at="2017-11-28T17:36:58Z" finished-at="2017-11-28T17:37:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="actionSheets()[pri:0, instance:com.appium.GridUFramework.AppTest@6ffa56fa]" name="actionSheets" duration-ms="16335" started-at="2017-11-27T15:46:47Z" finished-at="2017-11-27T15:47:04Z">
+        <test-method status="PASS" signature="actionSheets()[pri:0, instance:com.appium.GridUFramework.AppTest@19650aa6]" name="actionSheets" duration-ms="14620" started-at="2017-11-28T17:37:45Z" finished-at="2017-11-28T17:38:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- actionSheets -->
-        <test-method status="PASS" signature="stopServer()[pri:0, instance:com.appium.GridUFramework.AppTest@6ffa56fa]" name="stopServer" is-config="true" duration-ms="26" started-at="2017-11-27T15:47:04Z" finished-at="2017-11-27T15:47:04Z">
+        <test-method status="PASS" signature="stopServer()[pri:0, instance:com.appium.GridUFramework.AppTest@19650aa6]" name="stopServer" is-config="true" duration-ms="19" started-at="2017-11-28T17:38:00Z" finished-at="2017-11-28T17:38:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopServer -->
