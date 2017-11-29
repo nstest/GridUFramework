@@ -6,15 +6,25 @@ import org.testng.annotations.Test;
 public class AppTest extends AbstractAppTest
 {
 
+	HomePage homePage = new HomePage();
+	ActionSheets actionSheets = new ActionSheets();
+	ActivityIndicators activityIndicators = new ActivityIndicators();
+	
 	@Test(groups={"regression"})
 	public void testActionSheets() {
-		actionSheets();
+		homePage.clickActionSheets();
+		actionSheets.clicOkayOrCancel();
+		actionSheets.clickOK();
+		actionSheets.clickOther();
+		actionSheets.clickSafeChoice();
 		navigateBack();
 	}
 	
 	@Test(groups={"regression"})
 	public void testactivityIndicators() {
-		activityIndicators();
+		homePage.clickActivityIndicators();
+		activityIndicators.verifyGrayIndicator();
+		activityIndicators.verifyTintedIndicator();
 		navigateBack();
 	}
 	
