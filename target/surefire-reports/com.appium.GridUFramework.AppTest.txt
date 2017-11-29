@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.appium.GridUFramework.AppTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 65.446 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 64.229 sec

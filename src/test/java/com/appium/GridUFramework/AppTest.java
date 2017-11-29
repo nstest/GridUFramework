@@ -7,6 +7,7 @@ public class AppTest extends Base
 
 	@Test(groups={"regression"})
 	public void actionSheets() {
+		
 		driver.findElementByAccessibilityId("Action Sheets").click();
 
 		driver.findElementByXPath("//XCUIElementTypeStaticText[@name='Okay / Cancel']").click();
