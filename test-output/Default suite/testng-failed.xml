@@ -6,9 +6,12 @@
       <class name="com.appium.GridUFramework.AppTest">
         <methods>
           <include name="setup"/>
-          <include name="actionSheets"/>
           <include name="startServer"/>
+          <include name="closeDriver"/>
+          <include name="testActionSheets"/>
+          <include name="testactivityIndicators"/>
           <include name="stopServer"/>
+          <include name="testAlertViews"/>
         </methods>
       </class> <!-- com.appium.GridUFramework.AppTest -->
     </classes>

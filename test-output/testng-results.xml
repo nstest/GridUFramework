@@ -1,32 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="62236" started-at="2017-11-29T01:36:57Z" finished-at="2017-11-29T01:38:00Z">
+  <suite name="TestSuite" duration-ms="200939" started-at="2017-11-30T01:53:05Z" finished-at="2017-11-30T01:56:26Z">
     <groups>
       <group name="regression">
-        <method signature="AppTest.actionSheets()[pri:0, instance:com.appium.GridUFramework.AppTest@19650aa6]" name="actionSheets" class="com.appium.GridUFramework.AppTest"/>
+        <method signature="AppTest.testActionSheets()[pri:0, instance:com.appium.GridUFramework.AppTest@e26af6]" name="testActionSheets" class="com.appium.GridUFramework.AppTest"/>
+        <method signature="AppTest.testAlertViews()[pri:0, instance:com.appium.GridUFramework.AppTest@e26af6]" name="testAlertViews" class="com.appium.GridUFramework.AppTest"/>
+        <method signature="AppTest.testactivityIndicators()[pri:0, instance:com.appium.GridUFramework.AppTest@e26af6]" name="testactivityIndicators" class="com.appium.GridUFramework.AppTest"/>
       </group> <!-- regression -->
     </groups>
-    <test name="Default test" duration-ms="62236" started-at="2017-11-29T01:36:57Z" finished-at="2017-11-29T01:38:00Z">
+    <test name="Test App" duration-ms="200939" started-at="2017-11-30T01:53:05Z" finished-at="2017-11-30T01:56:26Z">
       <class name="com.appium.GridUFramework.AppTest">
-        <test-method status="PASS" signature="startServer()[pri:0, instance:com.appium.GridUFramework.AppTest@19650aa6]" name="startServer" is-config="true" duration-ms="5084" started-at="2017-11-28T17:36:52Z" finished-at="2017-11-28T17:36:57Z">
+        <test-method status="PASS" signature="startServer()[pri:0, instance:com.appium.GridUFramework.AppTest@e26af6]" name="startServer" is-config="true" duration-ms="5060" started-at="2017-11-29T17:53:00Z" finished-at="2017-11-29T17:53:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startServer -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.appium.GridUFramework.AppTest@19650aa6]" name="setup" is-config="true" duration-ms="47532" started-at="2017-11-28T17:36:58Z" finished-at="2017-11-28T17:37:45Z">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.appium.GridUFramework.AppTest@e26af6]" name="setup" is-config="true" duration-ms="58566" started-at="2017-11-29T17:53:05Z" finished-at="2017-11-29T17:54:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[iOSApp]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="actionSheets()[pri:0, instance:com.appium.GridUFramework.AppTest@19650aa6]" name="actionSheets" duration-ms="14620" started-at="2017-11-28T17:37:45Z" finished-at="2017-11-28T17:38:00Z">
+        <test-method status="PASS" signature="testActionSheets()[pri:0, instance:com.appium.GridUFramework.AppTest@e26af6]" name="testActionSheets" duration-ms="16997" started-at="2017-11-29T17:54:04Z" finished-at="2017-11-29T17:54:21Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- actionSheets -->
-        <test-method status="PASS" signature="stopServer()[pri:0, instance:com.appium.GridUFramework.AppTest@19650aa6]" name="stopServer" is-config="true" duration-ms="19" started-at="2017-11-28T17:38:00Z" finished-at="2017-11-28T17:38:00Z">
+        </test-method> <!-- testActionSheets -->
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.appium.GridUFramework.AppTest@e26af6]" name="setup" is-config="true" duration-ms="37039" started-at="2017-11-29T17:54:21Z" finished-at="2017-11-29T17:54:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[iOSApp]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testAlertViews()[pri:0, instance:com.appium.GridUFramework.AppTest@e26af6]" name="testAlertViews" duration-ms="13811" started-at="2017-11-29T17:54:58Z" finished-at="2017-11-29T17:55:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAlertViews -->
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.appium.GridUFramework.AppTest@e26af6]" name="setup" is-config="true" duration-ms="53421" started-at="2017-11-29T17:55:12Z" finished-at="2017-11-29T17:56:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[iOSApp]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testactivityIndicators()[pri:0, instance:com.appium.GridUFramework.AppTest@e26af6]" name="testactivityIndicators" duration-ms="9855" started-at="2017-11-29T17:56:05Z" finished-at="2017-11-29T17:56:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testactivityIndicators -->
+        <test-method status="PASS" signature="closeDriver()[pri:0, instance:com.appium.GridUFramework.AppTest@e26af6]" name="closeDriver" is-config="true" duration-ms="11144" started-at="2017-11-29T17:56:15Z" finished-at="2017-11-29T17:56:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method status="PASS" signature="stopServer()[pri:0, instance:com.appium.GridUFramework.AppTest@e26af6]" name="stopServer" is-config="true" duration-ms="25" started-at="2017-11-29T17:56:27Z" finished-at="2017-11-29T17:56:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopServer -->
       </class> <!-- com.appium.GridUFramework.AppTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test App -->
+  </suite> <!-- TestSuite -->
 </testng-results>

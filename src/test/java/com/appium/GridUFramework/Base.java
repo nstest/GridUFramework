@@ -1,14 +1,17 @@
 package com.appium.GridUFramework;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.concurrent.TimeUnit;
-
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
 import io.appium.java_client.remote.AutomationName;
 import io.appium.java_client.remote.MobileCapabilityType;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.DefaultExecuteResultHandler;
@@ -22,13 +25,21 @@ public class Base {
 
 	static IOSDriver<IOSElement> driver = null;
 	
+	Properties prop = new Properties();
+	InputStream input = null;
+	
+	
 	@BeforeMethod
-	public void setup() throws MalformedURLException {
+	public void setup() throws IOException, MalformedURLException {
+		String path = System.getProperty("user.dir") + "/resources/app.properties";
+		input = new FileInputStream(path);
+		prop.load(input);
+		
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 7");
-		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
+		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, prop.getProperty("deviceName"));
+		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, prop.getProperty("platformName"));
 		capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.IOS_XCUI_TEST);
-		capabilities.setCapability(MobileCapabilityType.APP, "/Users/ssundresh/Desktop/UICatalog.app");
+		capabilities.setCapability(MobileCapabilityType.APP, prop.getProperty("appLocation"));
 		
 		driver = new IOSDriver<IOSElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

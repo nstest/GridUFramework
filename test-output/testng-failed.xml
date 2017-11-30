@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite name="Failed suite [TestSuite]">
+  <test name="Test App(failed)">
+    <parameter name="type" value="iOSApp"/>
     <classes>
       <class name="com.appium.GridUFramework.AppTest">
         <methods>
           <include name="setup"/>
-          <include name="actionSheets"/>
           <include name="startServer"/>
+          <include name="closeDriver"/>
+          <include name="testActionSheets"/>
+          <include name="testactivityIndicators"/>
           <include name="stopServer"/>
+          <include name="testAlertViews"/>
         </methods>
       </class> <!-- com.appium.GridUFramework.AppTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test App(failed) -->
+</suite> <!-- Failed suite [TestSuite] -->

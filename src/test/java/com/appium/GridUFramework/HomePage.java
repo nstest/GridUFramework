@@ -14,6 +14,10 @@ public class HomePage extends Base{
 		driver.findElementByAccessibilityId("Activity Indicators").click();
 	}
 	
+	@Step("Click on Alert Views")
+	public void clickAlertViews() {
+		driver.findElementByAccessibilityId("Alert Views").click();
+	}
 	
 
 	
