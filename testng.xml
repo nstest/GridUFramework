@@ -2,7 +2,7 @@
 <suite name="TestSuite" verbose="1">
 	<test name="Test App">
 		<classes>
-			<class name="com.appium.GridUFramework.AppTest" />
+			<class name="com.appium.GridUFramework.SafariTest" />
 		</classes>
 	</test>
 </suite>

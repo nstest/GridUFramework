@@ -68,6 +68,10 @@
 							<name>listener</name>
 							<value>ru.yandex.qatools.allure.testng.AllureTestListener</value>
 						</property>
+						<property>
+							<name>platform</name>
+							<value>iosApp</value>
+						</property>
 					</properties>
 				</configuration>
 				<dependencies>
