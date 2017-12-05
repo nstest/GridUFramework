@@ -6,6 +6,7 @@ import io.appium.java_client.remote.AutomationName;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -29,8 +30,9 @@ public class Base {
 	InputStream input = null;
 	
 	
-	@BeforeMethod
+	@BeforeSuite
 	public void setup() throws IOException, MalformedURLException {
+		startServer();
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		String strPlatform = System.getProperty("platform");
 		if(strPlatform.equalsIgnoreCase("iosApp")) {
@@ -42,50 +44,35 @@ public class Base {
 			capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, prop.getProperty("platformName"));
 			capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.IOS_XCUI_TEST);
 			capabilities.setCapability(MobileCapabilityType.APP, prop.getProperty("appLocation"));
-			driver = new IOSDriver<IOSElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 		} else if(strPlatform.equalsIgnoreCase("iosSafari")) {
 			System.out.println("Performing validation on: " + System.getProperty("platform"));
-			capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 6");
-			capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
-			capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "11.1");
-			capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Safari");
+			capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, prop.getProperty("browserDevice"));
+			capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, prop.getProperty("browserPlatform"));
+			capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, prop.getProperty("browserPlatformVersion"));
+			capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, prop.getProperty("browserName"));
 			capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.IOS_XCUI_TEST);
 			capabilities.setCapability(MobileCapabilityType.ACCEPT_INSECURE_CERTS, true);
-			driver = new IOSDriver<IOSElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-			driver.get("http://www.gmail.com");
+			driver.get(prop.getProperty("testURL"));
 		}
 		
+		driver = new IOSDriver<IOSElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		
-//		if(type.equals("iosApp")) {
-//			capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 7");
-//			capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
-//			capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.IOS_XCUI_TEST);
-//			capabilities.setCapability(MobileCapabilityType.APP, "/Users/ssundresh/Desktop/UICatalog.app");
-//
-//		} else if(type.equals("safariBrowser")) {
-//			capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 6");
-//			capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
-//			capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "11.1");
-//			capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Safari");
-//			capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.IOS_XCUI_TEST);
-//			capabilities.setCapability(MobileCapabilityType.ACCEPT_INSECURE_CERTS, true);
-//		}
 	}
 
 	//Start the Appium server using appium and node(Opening GUI version of Appium using code, an headless mode approach)
-	@BeforeSuite
-	public void startServer() {
+//	@BeforeSuite
+	public void startServer() throws IOException {
+		String path = System.getProperty("user.dir") + "/resources/app.properties";
+		input = new FileInputStream(path);
+		prop.load(input);
 		
-		CommandLine command = new CommandLine(
-				"/usr/local/bin/node");
-		command.addArgument(
-				"/usr/local/bin/appium",
+		CommandLine command = new CommandLine(prop.getProperty("nodePath"));
+		command.addArgument(prop.getProperty("appiumPath"),
 				false);
 		command.addArgument("--address", false);
-		command.addArgument("127.0.0.1");
+		command.addArgument(prop.getProperty("hostIP"));
 		command.addArgument("--port", false);
-		command.addArgument("4723");
+		command.addArgument(prop.getProperty("portNumber"));
 		command.addArgument("--full-reset", false);
 		DefaultExecuteResultHandler resultHandler = new DefaultExecuteResultHandler();
 		DefaultExecutor executor = new DefaultExecutor();

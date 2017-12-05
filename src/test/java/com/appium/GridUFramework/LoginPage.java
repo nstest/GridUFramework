@@ -11,6 +11,7 @@ public class LoginPage extends Base{
 
 	@Step("Enter Email Address and click on Next")
 	public void enterEmail() {
+		System.out.println("Entering email address");
 		driver.findElement(By.id("identifierId")).sendKeys("santhoshmaddy@gmail.com");
 		driver.findElement(By.xpath("//div[@id='identifierNext']/div[2]")).click();
 		
